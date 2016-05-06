@@ -1,0 +1,28 @@
+{
+  "name": "tomedescontos",
+  "version": "1.0.0",
+  "description": "Tomedescontos is an application to scrap promotions from the mean web forums about promotions in Brazil.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "tomedescontos"
+  },
+  "author": "Lucas Lima",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "express": "^4.13.4",
+    "gulp-install": "^0.6.0",
+    "gulp-jshint": "^2.0.0",
+    "iconv-lite": "^0.4.13",
+    "jshint": "^2.9.2",
+    "request": "^2.72.0",
+    "request-promise": "^3.0.0"
+  },
+  "devDependencies": {
+    "gulp-nodemon": "^2.0.6"
+  }
+}
