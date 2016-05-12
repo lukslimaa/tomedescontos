@@ -6,9 +6,7 @@ var iconv = require('iconv-lite');
 module.exports = {
     test: (urls, callback) => {
         var result = [], signal = 0;
-        console.log(urls);
         for(i=0;i<urls.length;i++){
-            console.log(urls[i]);
             var options = {
                 uri: urls[i],
                 encoding: null,
@@ -22,8 +20,7 @@ module.exports = {
             request(options)
                 .then(function(html) {
                     var a = iconv.decode(new Buffer(html), 'iso-8859-1');
-                    var $ = cheerio.load(a);
-                    
+                    var $ = cheerio.load(a);                   
                     $('.threads li .title').filter(function(){
                         result.push({title: $(this).text(), href: $(this)[0].attribs.href});
                     })
@@ -33,7 +30,7 @@ module.exports = {
                     })
                     
                     signal++;  
-                    
+
                     if(signal == urls.length){
                         return callback(null, result);
                     }                 
