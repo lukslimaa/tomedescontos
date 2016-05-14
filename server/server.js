@@ -1,20 +1,27 @@
-var express = require('express');
-var fs = require('fs');
-var request = require('request-promise');
-var cheerio = require('cheerio');
-var iconv = require('iconv-lite');
-var app     = express();
-const scrap = require('./controller/app.js');
+var express = require('express'),
+  fs = require('fs'),
+  request = require('request-promise'),
+  cheerio = require('cheerio'),
+  iconv = require('iconv-lite'),
+  app = express(),
+  c = require('./controller/app.js'),
+  db = require('./model/db.js');
 
-app.get('/', function(req, res){
+
+app.get('/promos', function(req, res){
+  var signal = 0;
   var urls = ["http://hardmob.com.br/promocoes", 
-            "http://www.hardmob.com.br/promocoes/index2.html", 
-            "http://www.promoforum.com.br/forums/promocoes/", 
-            "http://www.promoforum.com.br/forums/promocoes/page-2"];
+              "http://www.hardmob.com.br/promocoes/index2.html", 
+              "http://www.promoforum.com.br/forums/promocoes/", 
+              "http://www.promoforum.com.br/forums/promocoes/page-2"];
+              
+  //calling methods responsibles to scrap all information and add it to database
+  c.ctrl(urls);
   
-  scrap.test(urls, function(err, result){
-      res.send(result);
-  })
+  //recovering data from database to make it available to be consumed
+  db.find(function(promos){
+    res.json(promos);
+  });
 })
 
 app.listen('8081');

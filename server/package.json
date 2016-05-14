@@ -19,7 +19,7 @@
     "gulp-jshint": "^2.0.0",
     "iconv-lite": "^0.4.13",
     "jshint": "^2.9.2",
-    "nodemon": "^1.9.2",
+    "mongoose": "^4.4.16",
     "request": "^2.72.0",
     "request-promise": "^3.0.0"
   },

@@ -1,43 +1,23 @@
-var request = require('request-promise');
-var cheerio = require('cheerio');
-var iconv = require('iconv-lite');
-
+var scrap1 = require('.././model/hmSource.js'),
+    db = require('.././model/db.js'),
+    scrap2 = require('.././model/pfSource.js');
 
 module.exports = {
-    test: (urls, callback) => {
-        var result = [], signal = 0;
+    ctrl: (urls) => {
+        var promotions = [];
         for(i=0;i<urls.length;i++){
-            var options = {
-                uri: urls[i],
-                encoding: null,
-                headers: {
-                    "Accept": "text, text/plain, text/xml",
-                    "Accept-Encoding": "UTF-8",
-                    'Content-Type': "text/plain; charset=utf-8;",
-                    'user-agent': 'Request-Promise'
-                }
+            if(urls[i].indexOf('hardmob') > 0){ 
+                scrap1.hmSource(urls[i], function(result){
+                    promotions.push.apply(promotions, result);
+                    db.add(promotions);
+                });
             }
-            request(options)
-                .then(function(html) {
-                    var a = iconv.decode(new Buffer(html), 'iso-8859-1');
-                    var $ = cheerio.load(a);                   
-                    $('.threads li .title').filter(function(){
-                        result.push({title: $(this).text(), href: $(this)[0].attribs.href});
-                    })
-                    $('.discussionListItem.visible .PreviewTooltip').filter(function(){
-                        var root = (options.uri).substring(0,(options.uri).indexOf('br/')+3);
-                        result.push({title: $(this).text(), href: root+$(this)[0].attribs.href});
-                    })
-                    
-                    signal++;  
-
-                    if(signal == urls.length){
-                        return callback(null, result);
-                    }                 
-                })
-                .catch(function(err){
-                    return 'errado';
-                })
-        }        
+            if(urls[i].indexOf('promoforum') > 0){
+                scrap2.pfSource(urls[i], function(result){
+                    promotions.push.apply(promotions, result);
+                    db.add(promotions);
+                });
+            }
+        }
     }
 }
