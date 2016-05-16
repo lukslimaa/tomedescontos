@@ -5,8 +5,8 @@ module.exports = {
             return len > 0? new Array(len).join(chr || '0')+this : this;
         }
         var d = new Date,
-        dformat = [ (d.getMonth()+1).padLeft(),
-                     d.getDate().padLeft(),
+        dformat = [  d.getDate().padLeft(),
+                     (d.getMonth()+1).padLeft(),
                      d.getFullYear()].join('/')+
                      ' ' +
                      [ d.getHours().padLeft(),

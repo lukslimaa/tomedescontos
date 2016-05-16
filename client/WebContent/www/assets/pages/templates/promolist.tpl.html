@@ -1,0 +1,29 @@
+<div class="ui container page" ng-controller="PromoController as promoCtrl">
+    <div class="ui column centered grid">
+        <div class="left floated stackable eleven wide column">
+            <div class="ui divided items">
+                <div class="item" ng-repeat="promo in promoCtrl.promotions">
+                    <div class="ui small image">
+                        <object id="svg1" data="assets/img/rocket.svg" type="image/svg+xml"></object>
+                    </div>
+                    <div class="content">
+                        <a class="header" href="{{promo.url}}">{{promo.title}}</a>
+                        <div class="meta">
+                            <span class="cinema">{{promo.date}}</span>
+                        </div>
+                        <div class="description">
+                            <p></p>
+                        </div>
+                        <div class="extra">
+                            <a class="ui right floated primary button" href="{{promo.url}}">
+                                Ver Detalhes
+                                <i class="right chevron icon"></i>
+                            </a>
+                            <div class="ui label">Limited</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

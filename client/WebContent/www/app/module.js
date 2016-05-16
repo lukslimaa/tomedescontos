@@ -1,0 +1,4 @@
+/// <reference path="app.d.ts" />
+var app = angular.module('tomedescontos', ['ui.router', 'pascalprecht.translate']);
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vZHVsZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxpQ0FBaUM7QUFFakMsSUFBSSxHQUFHLEdBQUcsT0FBTyxDQUFDLE1BQU0sQ0FBQyxlQUFlLEVBQUUsQ0FBQyxXQUFXLEVBQUUsd0JBQXdCLENBQUMsQ0FBQyxDQUFDIiwiZmlsZSI6Im1vZHVsZS5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vLyA8cmVmZXJlbmNlIHBhdGg9XCJhcHAuZC50c1wiIC8+XHJcblxyXG52YXIgYXBwID0gYW5ndWxhci5tb2R1bGUoJ3RvbWVkZXNjb250b3MnLCBbJ3VpLnJvdXRlcicsICdwYXNjYWxwcmVjaHQudHJhbnNsYXRlJ10pOyJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==

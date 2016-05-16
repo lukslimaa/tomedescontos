@@ -31,9 +31,9 @@ module.exports = {
             });
         }
     },
-    //general method that returns the last 50 records sorted by date (descending)
+    //general method that returns the last 150 records sorted by date (descending)
     find: (callback) => {
-        Promo.find().sort({date: -1}).limit(50).exec(function(err, model){
+        Promo.find().sort({date: -1}).limit(150).exec(function(err, model){
             return callback(model);
         });
     }

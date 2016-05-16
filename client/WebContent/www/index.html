@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="tomedescontos">
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properities -->
+  <title>Tome Descontos</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/semantic.min.js"></script>
+  
+  <!-- Angular modules -->
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular-translate/angular-translate.js"></script>
+  <script src="assets/js/angular-translate/angular-translate.min.js"></script>
+  <script src="assets/js/angular-ui-router/angular-ui-router.js"></script>
+  <script src="assets/js/angular-ui-router/angular-ui-router.min.js"></script>
+  
+</head>
+<body>
+  <div class="ui vertical inverted left visible sidebar menu">
+  <a class="item">
+    <i class="home icon"></i>
+    Home
+  </a>
+  <a class="item">
+    <i class="block layout icon"></i>
+    Topics
+  </a>
+  <a class="item">
+    <i class="smile icon"></i>
+    Friends
+  </a>
+</div>
+<div class="pusher">
+  <div ui-view></div>
+</div>
+	
+	
+  <!-- Angular -->
+  <script src="app/module.js"></script>
+  <script src="app/routes.js"></script>
+  <script src="app/promoList/promoList.ctr.js"></script>
+  <script src="app/services/promos.ser.js"></script>
+	
+</body>
+
+</html>

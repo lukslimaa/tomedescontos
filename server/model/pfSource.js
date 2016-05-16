@@ -21,7 +21,7 @@ module.exports = {
         request(options).then(function(html){
             var a = iconv.decode(new Buffer(html), 'utf8');
             var $ = cheerio.load(a);
-            $('.discussionListItem.visible .PreviewTooltip').filter(function(){
+            $('.discussionListItem.visible:not(.sticky) .PreviewTooltip').filter(function(){
                 var root = (options.uri).substring(0,(options.uri).indexOf('br/')+3);
                 result.push({title: $(this).text(), href: root+$(this)[0].attribs.href});
             })
