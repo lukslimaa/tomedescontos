@@ -1,6 +1,7 @@
-var cheerio = require('cheerio');
-var iconv = require('iconv-lite');
-var request = require('request-promise');
+var cheerio = require('cheerio'),
+    iconv = require('iconv-lite'),
+    request = require('request-promise'),
+    utils = require('./utils.js');
 
 
 
@@ -22,7 +23,7 @@ module.exports = {
             var a = iconv.decode(new Buffer(html), 'iso-8859-1');
             var $ = cheerio.load(a);
             $('.threads li .title').filter(function(){
-                result.push({title: $(this).text(), href: $(this)[0].attribs.href});
+                result.push({title: $(this).text(), href: $(this)[0].attribs.href, img: null, date: utils.today()});
             })
             return callback(result);
         })

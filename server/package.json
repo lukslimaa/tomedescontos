@@ -13,6 +13,7 @@
   "author": "Lucas Lima",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.0.0-rc.5",
     "cheerio": "^0.20.0",
     "express": "^4.13.4",
     "gulp-install": "^0.6.0",

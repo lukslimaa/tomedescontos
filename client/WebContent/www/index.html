@@ -20,26 +20,30 @@
   <script src="assets/js/angular-translate/angular-translate.min.js"></script>
   <script src="assets/js/angular-ui-router/angular-ui-router.js"></script>
   <script src="assets/js/angular-ui-router/angular-ui-router.min.js"></script>
+  <script src="assets/js/moment/moment.min.js"></script>
+  <script src="assets/js/moment/pt-br.js"></script>
+  <script src="assets/js/angular-moment/angular-moment.min.js"></script>
   
 </head>
 <body>
-  <div class="ui vertical inverted left visible sidebar menu">
-  <a class="item">
-    <i class="home icon"></i>
-    Home
-  </a>
-  <a class="item">
-    <i class="block layout icon"></i>
-    Topics
-  </a>
-  <a class="item">
-    <i class="smile icon"></i>
-    Friends
-  </a>
-</div>
-<div class="pusher">
-  <div ui-view></div>
-</div>
+  <!-- sidebar section -->
+  <div class="ui vertical inverted left visible wide sidebar menu">
+    <div class="ui column centered grid">
+      <div class="center aligned column">
+        <form class="ui form">
+          <div class="twelve wide field">
+            <label>First Name</label>
+            <input type="text" name="first-name" ng-model="title" placeholder="First Name">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- where all pages are gonna be loaded -->
+  <div class="pusher">
+    <div ui-view></div>
+  </div>
 	
 	
   <!-- Angular -->

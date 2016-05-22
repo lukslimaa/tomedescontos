@@ -5,13 +5,13 @@ module.exports = {
             return len > 0? new Array(len).join(chr || '0')+this : this;
         }
         var d = new Date,
-        dformat = [  d.getDate().padLeft(),
+        dformat = [  d.getFullYear(),
                      (d.getMonth()+1).padLeft(),
-                     d.getFullYear()].join('/')+
+                     d.getDate().padLeft()].join('-')+
                      ' ' +
-                     [ d.getHours().padLeft(),
-                       d.getMinutes().padLeft(),
-                       d.getSeconds().padLeft()].join(':');
+                     [d.getHours().padLeft(),
+                      d.getMinutes().padLeft(),
+                      d.getSeconds().padLeft()].join(':')+'.000';
         return dformat;               
     }
 }

@@ -2,20 +2,22 @@
     <div class="ui column centered grid">
         <div class="left floated stackable eleven wide column">
             <div class="ui divided items">
-                <div class="item" ng-repeat="promo in promoCtrl.promotions">
-                    <div class="ui small image">
-                        <object id="svg1" data="assets/img/rocket.svg" type="image/svg+xml"></object>
+                <div class="item" ng-repeat="promo in promoCtrl.promotions | filter:title">
+                    <div class="image">
+                        <img ng-src="{{promo.img !== 'null' && promo.img || 'assets/img/rocket.svg'}}">
                     </div>
                     <div class="content">
-                        <a class="header" href="{{promo.url}}">{{promo.title}}</a>
+                        <a class="header" href="{{promo.url}}" target="_blank">{{promo.title}}</a>
                         <div class="meta">
-                            <span class="cinema">{{promo.date}}</span>
+                            <span class="cinema">
+                                <time am-time-ago="promo.date"></time>
+                            </span>
                         </div>
                         <div class="description">
                             <p></p>
                         </div>
                         <div class="extra">
-                            <a class="ui right floated primary button" href="{{promo.url}}">
+                            <a class="ui right floated primary button" target="_blank" href="{{promo.url}}">
                                 Ver Detalhes
                                 <i class="right chevron icon"></i>
                             </a>

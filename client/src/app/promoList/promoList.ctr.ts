@@ -5,6 +5,7 @@ module Tomedescontos {
     export class PromoController {
 
         private promotions: any;
+        private date: any;
 
         constructor(private $scope: ng.IScope, 
             private $http: ng.IHttpService, 

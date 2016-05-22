@@ -1,6 +1,7 @@
-var cheerio = require('cheerio');
-var iconv = require('iconv-lite');
-var request = require('request-promise');
+var cheerio = require('cheerio'),
+    iconv = require('iconv-lite'),
+    request = require('request-promise'),
+    utils = require('./utils.js');
 
 
 
@@ -23,7 +24,7 @@ module.exports = {
             var $ = cheerio.load(a);
             $('.discussionListItem.visible:not(.sticky) .PreviewTooltip').filter(function(){
                 var root = (options.uri).substring(0,(options.uri).indexOf('br/')+3);
-                result.push({title: $(this).text(), href: root+$(this)[0].attribs.href});
+                result.push({title: $(this).text(), href: root+$(this)[0].attribs.href, img: null, date: utils.today()});
             })
             
             return callback(result);
