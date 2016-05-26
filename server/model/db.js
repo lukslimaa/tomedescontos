@@ -41,7 +41,6 @@ module.exports = {
             
             /* calling update method */
             updateDb(promo, function(result){
-                console.log(result);
             });
         }
     },
