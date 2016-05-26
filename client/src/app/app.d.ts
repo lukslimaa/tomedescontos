@@ -5,3 +5,6 @@
 
 /// <reference path="promoList/promoList.ctr.ts" />
 /// <reference path="services/promos.ser.ts" />
+
+/// <reference path="menu/menu.dir.ts" />
+/// <reference path="sidebar/sidebar.dir.ts" />

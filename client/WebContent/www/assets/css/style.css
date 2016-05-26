@@ -1,3 +1,16 @@
-.page {
-	margin-top: 3em;
-}
+label {
+  color: #fff !important; }
+
+.large.menu {
+  z-index: 9999 !important; }
+
+.options {
+  padding-top: 5em; }
+
+.options .search.icon {
+  color: #fff !important; }
+
+.grid.products {
+  padding-top: 8em; }
+
+/*# sourceMappingURL=style.css.map */

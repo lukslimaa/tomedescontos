@@ -1,0 +1,24 @@
+<!-- sidebar title -->
+<div class="item">
+    <h3 class="ui header">
+    <i class="search icon"></i>
+    <div class="content">
+        <label>Pesquisar Produto</label>
+    </div>
+    </h3>
+</div>
+<!-- sidebar form -->
+<div class="item">
+    <form class="ui form">
+        <div class="field">
+            <label>O que você está procurando?</label>
+            <input type="text" name="first-name" placeholder="Exemplo: iPhone 6s" ng-model="search.title">
+        </div>
+        <div class="field" ng-controller="PromoController as ctrl">
+            <div>
+                <label>Ativar modo "Saga pelo Produto" 
+                <input id="sagaOn" ng-init="ctrl.saga=false" type="checkbox" ng-click="ctrl.changeStatus(ctrl.saga)" ng-model="ctrl.saga"></label>
+            </div>
+        </div>
+    </form>
+</div>

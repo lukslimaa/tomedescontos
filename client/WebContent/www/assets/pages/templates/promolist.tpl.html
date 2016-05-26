@@ -1,20 +1,18 @@
 <div class="ui container page" ng-controller="PromoController as promoCtrl">
-    <div class="ui column centered grid">
+    <div class="ui column centered grid products">
         <div class="left floated stackable eleven wide column">
             <div class="ui divided items">
-                <div class="item" ng-repeat="promo in promoCtrl.promotions | filter:title">
-                    <div class="image">
+                <div class="item" ng-repeat="promo in promoCtrl.promotions | filter:search">
+                    <div class="ui tiny image">
                         <img ng-src="{{promo.img !== 'null' && promo.img || 'assets/img/rocket.svg'}}">
                     </div>
                     <div class="content">
                         <a class="header" href="{{promo.url}}" target="_blank">{{promo.title}}</a>
                         <div class="meta">
                             <span class="cinema">
+                                <i class="clock icon"></i>
                                 <time am-time-ago="promo.date"></time>
                             </span>
-                        </div>
-                        <div class="description">
-                            <p></p>
                         </div>
                         <div class="extra">
                             <a class="ui right floated primary button" target="_blank" href="{{promo.url}}">

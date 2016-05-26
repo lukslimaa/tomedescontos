@@ -26,18 +26,12 @@
   
 </head>
 <body>
+  <!-- Menu -->
+  <menu></menu>  
+ 
   <!-- sidebar section -->
-  <div class="ui vertical inverted left visible wide sidebar menu">
-    <div class="ui column centered grid">
-      <div class="center aligned column">
-        <form class="ui form">
-          <div class="twelve wide field">
-            <label>First Name</label>
-            <input type="text" name="first-name" ng-model="title" placeholder="First Name">
-          </div>
-        </form>
-      </div>
-    </div>
+  <div class="ui vertical inverted left visible wide sidebar menu options">
+    <sidebar></sidebar>
   </div>
   
   <!-- where all pages are gonna be loaded -->
@@ -50,6 +44,8 @@
   <script src="app/module.js"></script>
   <script src="app/routes.js"></script>
   <script src="app/promoList/promoList.ctr.js"></script>
+  <script src="app/menu/menu.dir.js"></script>
+  <script src="app/sidebar/sidebar.dir.js"></script>
   <script src="app/services/promos.ser.js"></script>
 	
 </body>
