@@ -2,7 +2,7 @@
     <div class="ui column centered grid products">
         <div class="left floated stackable eleven wide column">
             <div class="ui divided items">
-                <div class="item" ng-repeat="promo in promoCtrl.promotions | filter:search">
+                <div class="item promoItems" ng-repeat="promo in promoCtrl.promotions | filter:search">
                     <div class="ui tiny image">
                         <img ng-src="{{promo.img !== 'null' && promo.img || 'assets/img/rocket.svg'}}">
                     </div>
@@ -19,7 +19,7 @@
                                 Ver Detalhes
                                 <i class="right chevron icon"></i>
                             </a>
-                            <div class="ui label">Limited</div>
+                            <!--<div class="ui label">Limited</div>-->
                         </div>
                     </div>
                 </div>

@@ -1,11 +1,18 @@
-label {
+label, .ui.form .find label {
   color: #fff !important; }
 
 .large.menu {
   z-index: 9999 !important; }
 
+.ui.form {
+  margin-top: .95em; }
+  .ui.form .find label {
+    font-size: 1.3em;
+    padding-bottom: 0.45em; }
+
 .options {
-  padding-top: 5em; }
+  padding-top: 5em;
+  background-color: rgba(57, 64, 74, 0.85) !important; }
 
 .options .search.icon {
   color: #fff !important; }

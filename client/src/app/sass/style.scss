@@ -1,4 +1,4 @@
-$primary-color: #7F176B;
+$primary-color: #5b4282;
 $white: #fff;
 
 label{ color: $white !important;}
@@ -6,8 +6,20 @@ label{ color: $white !important;}
     z-index: 9999 !important;
 }
 
+.ui.form {
+    margin-top: .95em;
+    .find{
+        label{
+            @extend label;
+            font-size: 1.3em;
+            padding-bottom: 0.45em;
+        } 
+    }
+}
+
 .options {
     padding-top: 5em;
+    background-color: rgba(57, 64, 74, 0.85) !important;
 }
 
 .options .search.icon {
