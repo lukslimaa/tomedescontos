@@ -64,6 +64,3 @@ function updateDb(promo, cb){
         }
     });
 }
-
-//opening mongo connection
-mongoose.connect('mongodb://localhost:27017/promotions');

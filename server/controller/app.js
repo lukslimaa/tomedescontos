@@ -1,7 +1,7 @@
-var scrap1 = require('.././model/hmSource.js'),
-    db = require('.././model/db.js'),
-    scrap2 = require('.././model/pfSource.js'),
-    scrap3 = require('.././model/gSource.js');
+const scrap1 = require('.././model/hmSource.js'),
+      db = require('.././model/db.js'),
+      scrap2 = require('.././model/pfSource.js'),
+      scrap3 = require('.././model/gSource.js');
 
 module.exports = {
     ctrl: (urls) => {
