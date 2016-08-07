@@ -23,14 +23,13 @@ module.exports = {
             var $ = cheerio.load(a);
             var img, title, url, currency, price, result = [];
             $('.promocao').filter(function(){
-                
-                //extracting data to save on database
-                img = $(this)[0].children[0].next.children[2].prev.children[0].attribs.src;
-                title = $(this)[0].children[2].next.children[0].next.children[0].next.children[0].data;
-                url = $(this)[0].children[2].next.children[0].next.children[0].next.attribs.href;
-                currency = $(this)[0].children[2].next.children[4].next.children[0].next.children[0].data;
-                price = $(this)[0].children[2].next.children[4].next.children[0].next.next.next.children[0].data;
-                
+                console.log($(this).find($('.informacoes h3[itemprop=name] a')).text());
+                img = $(this).find($('.imagem img')).attr('src');
+                title = $(this).find($('.informacoes h3[itemprop=name] a')).text();
+                url = $(this).find($('.informacoes a')).attr('href');
+                currency = $(this).find($('.informacoes .preco span[itemprop=priceCurrency]')).text();
+                price = $(this).find($('.informacoes .preco span[itemprop=price]')).text();
+
                 //adding all data to array that will be returned
                 result.push({title: title + ' - ' + currency+price, href: url, img: img, date: utils.today()});
             })

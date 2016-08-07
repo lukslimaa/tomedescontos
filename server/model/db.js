@@ -21,7 +21,7 @@ var schema = new mongoose.Schema({
    }
 });
 
-//defining my model
+//define the database model
 var Promo = mongoose.model('Promos', schema);
 
 module.exports = {

@@ -17,8 +17,9 @@ mongoose.connect(generalParams.mongoAddr);
 setInterval(function(){
   console.log('processo iniciado!')
   c.ctrl(generalParams.urls);
-  console.log('processo finalizado!')
-}, 300000);
+}, 60000);
+
+console.log('processo finalizado com sucesso!')
 
 /** starting application */
 app.listen('8081');
