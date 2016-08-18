@@ -4,6 +4,8 @@
 /// <reference path="routes.ts" />
 
 /// <reference path="promoList/promoList.ctr.ts" />
+/// <reference path="menu/menu.ctr.ts" />
+/// <reference path="main/main.ctr.ts" />
 /// <reference path="services/promos.ser.ts" />
 
 /// <reference path="menu/menu.dir.ts" />

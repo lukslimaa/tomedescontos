@@ -5,6 +5,10 @@ module Tomedescontos {
         $urlRouterProvider.otherwise('/index');
         
         $stateProvider
+            .state('index', {
+                url: "/home",
+                templateUrl: "assets/pages/templates/main.tpl.html"
+            })
             .state('promo', {
                 url: "/promocoes",
                 templateUrl: "assets/pages/templates/promolist.tpl.html"

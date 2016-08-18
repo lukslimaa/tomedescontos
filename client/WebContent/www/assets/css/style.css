@@ -1,8 +1,114 @@
+html, body {
+  background: #fff;
+  height: 100%;
+  text-align: center; }
+
 label, .ui.form .find label {
   color: #fff !important; }
 
-.large.menu {
-  z-index: 9999 !important; }
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 3.32rem;
+  color: #A44D9B; }
+
+h4 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 1.32rem;
+  color: #727275; }
+
+.ui.small.image {
+  width: 120px; }
+
+.page {
+  margin-top: 5em; }
+
+section, .initial, .second {
+  height: 100vh; }
+
+.searchBar {
+  min-height: 20vh;
+  background-color: #FAF5FA;
+  /* FF 4-18 */
+  /* FF 19+ */
+  /* IE 10+ */ }
+  .searchBar .suggestion {
+    color: #48484A !important;
+    float: right;
+    padding-top: 0.58rem; }
+  .searchBar input[type=text] {
+    background-color: transparent;
+    margin: 0.9rem 0 0.9rem 0 !important;
+    font-size: 1.5245rem !important;
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    padding: 10px;
+    border: none;
+    border-bottom: solid 2px #c9c9c9;
+    transition: border 0.3s; }
+  .searchBar input[type="text"]:focus,
+  .searchBar input[type="text"].focus {
+    background-color: transparent;
+    border-bottom: solid 2px #2185d0; }
+  .searchBar :focus::-webkit-input-placeholder {
+    text-indent: -999px; }
+  .searchBar :focus:-moz-placeholder {
+    text-indent: -999px; }
+  .searchBar :focus::-moz-placeholder {
+    text-indent: -999px; }
+  .searchBar :focus:-ms-input-placeholder {
+    text-indent: -999px; }
+  .searchBar input[type=checkbox] {
+    transform: scale(1.3); }
+  .searchBar .checkbox {
+    margin-top: 1.232rem; }
+    .searchBar .checkbox label, .searchBar .checkbox .ui.form .find label, .ui.form .find .searchBar .checkbox label {
+      color: #48484A !important; }
+    .searchBar .checkbox input {
+      outline: 1px solid !important; }
+
+/* highlight new products */
+@-webkit-keyframes yellow-fade {
+  0% {
+    background: yellow; }
+  100% {
+    background: none; } }
+@keyframes yellow-fade {
+  0% {
+    background: yellow; }
+  100% {
+    background: none; } }
+.highlight {
+  -webkit-animation: yellow-fade 2s ease-in 1;
+  animation: yellow-fade 2s ease-in 1; }
+
+/* END */
+.initial {
+  color: white; }
+  .initial .headline h2 {
+    margin-top: 19.2vh; }
+  .initial .headline h4 {
+    margin-top: -1.25em; }
+
+.second {
+  background-color: #3e384f;
+  color: #d9cdf6; }
+  .second h1 {
+    font-family: 'Tinos', serif;
+    color: #fff; }
+
+.ui.menu {
+  border: none !important;
+  box-shadow: none !important;
+  background-color: #FF6B6B !important; }
+  .ui.menu .container {
+    margin: 0em 12em 0em 12em !important; }
+  .ui.menu .item {
+    color: #fff; }
+  .ui.menu .item:hover {
+    color: #f1f1f1 !important; }
 
 .ui.form {
   margin-top: .95em; }
@@ -18,6 +124,6 @@ label, .ui.form .find label {
   color: #fff !important; }
 
 .grid.products {
-  padding-top: 8em; }
+  margin-top: 8rem; }
 
 /*# sourceMappingURL=style.css.map */

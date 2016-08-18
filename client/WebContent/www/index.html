@@ -10,7 +10,14 @@
   <title>Tome Descontos</title>
   <link rel="stylesheet" type="text/css" href="assets/css/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+  <link rel="stylesheet" type="text/css" href="assets/css/livicons-help.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/prettify.css">
+  
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Raleway:500,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+  
+  
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/semantic.min.js"></script>
   
@@ -22,32 +29,49 @@
   <script src="assets/js/angular-ui-router/angular-ui-router.min.js"></script>
   <script src="assets/js/moment/moment.min.js"></script>
   <script src="assets/js/moment/pt-br.js"></script>
+  <script src="assets/js/notify/notification.js"></script>
   <script src="assets/js/angular-moment/angular-moment.min.js"></script>
-  
 </head>
 <body>
-  <!-- Menu -->
-  <menu></menu>  
- 
-  <!-- sidebar section -->
-  <div class="ui vertical inverted left visible wide sidebar menu options">
-    <sidebar></sidebar>
+
+  <!-- Following Menu -->
+  <div class="ui large top fixed hidden menu secMenu">
+    <div class="ui container">
+      <a class="active item">Home</a>
+      <a class="item">Work</a>
+      <a class="item">Company</a>
+      <a class="item">Careers</a>
+      <div class="right menu">
+        <div class="item">
+          <a class="ui button">Log in</a>
+        </div>
+        <div class="item">
+          <a class="ui primary button">Sign Up</a>
+        </div>
+      </div>
+    </div>
   </div>
+
+
+  <!-- Menu -->
+  <menu></menu>
   
   <!-- where all pages are gonna be loaded -->
-  <div class="pusher">
-    <div ui-view></div>
-  </div>
-	
-	
+  <div ui-view></div>
+
   <!-- Angular -->
   <script src="app/module.js"></script>
   <script src="app/routes.js"></script>
   <script src="app/promoList/promoList.ctr.js"></script>
+  <script src="app/main/main.ctr.js"></script>
+  <script src="app/menu/menu.ctr.js"></script>
   <script src="app/menu/menu.dir.js"></script>
   <script src="app/sidebar/sidebar.dir.js"></script>
   <script src="app/services/promos.ser.js"></script>
-	
+  <script src="assets/js/prettify.min.js"></script>
+  <script src="assets/js/raphael-min.js"></script>
+  <script src="assets/js/livicons-help.min.js"></script>
+
 </body>
 
 </html>

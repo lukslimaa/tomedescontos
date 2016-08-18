@@ -1,9 +1,121 @@
-$primary-color: #5b4282;
+$purple: #A44D9B;
+$black: #48484A;
 $white: #fff;
 
+html, body {
+    background: $white;
+    height: 100%;
+    text-align: center;  
+}
+
 label{ color: $white !important;}
-.large.menu {
-    z-index: 9999 !important;
+h2{font-family: 'Raleway', sans-serif; font-weight: 500; font-size: 3.32rem; color: $purple;}
+h4{font-family: 'Raleway', sans-serif; font-weight: 400; font-size: 1.32rem; color: #727275;}
+
+.ui.small.image {
+    width: 120px;
+}
+
+.page {
+    margin-top: 5em;
+}
+
+section {
+    height: 100vh;
+}
+
+.searchBar {
+    min-height: 20vh;
+    background-color: #FAF5FA;
+    .suggestion{color: #48484A !important; float:right; padding-top: 0.58rem;}
+    input[type=text]{
+        background-color: transparent;
+        margin: 0.9rem 0 0.9rem 0 !important;
+        font-size: 1.5245rem !important;
+        border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        padding: 10px;
+        border: none;
+        border-bottom: solid 2px #c9c9c9;
+        transition: border 0.3s;
+    }
+    input[type="text"]:focus,
+    input[type="text"].focus {
+        background-color: transparent;
+        border-bottom: solid 2px #2185d0;
+    }
+    
+    //hide placeholder when input field is focused
+    :focus::-webkit-input-placeholder { text-indent: -999px; }
+    :focus:-moz-placeholder { text-indent: -999px; } /* FF 4-18 */
+    :focus::-moz-placeholder { text-indent: -999px; } /* FF 19+ */
+    :focus:-ms-input-placeholder { text-indent: -999px; } /* IE 10+ */
+    
+    input[type=checkbox]{
+        transform: scale(1.3);
+    }
+
+    .checkbox {
+        margin-top: 1.232rem;
+        label {
+            color: #48484A !important;
+        }
+        input{
+            outline: 1px solid !important;
+        }
+    }
+
+}
+
+/* highlight new products */
+@-webkit-keyframes yellow-fade {
+   0% {background: yellow;}
+   100% {background: none;}
+}
+@keyframes yellow-fade {
+   0% {background: yellow;}
+   100% {background: none;}
+}
+
+.highlight {
+   -webkit-animation: yellow-fade 2s ease-in 1;
+   animation: yellow-fade 2s ease-in 1;
+}
+/* END */
+
+.initial {
+    @extend section;
+    color: white;
+    
+    .headline {
+        h2{margin-top: 19.2vh;}
+        h4{margin-top: -1.25em;}
+    }
+}
+
+.second {
+    @extend section;
+    background-color: #3e384f;
+    color: #d9cdf6;
+    
+    h1{font-family: 'Tinos', serif; color: $white}
+    
+}
+
+.ui.menu {
+    border: none !important;
+    box-shadow: none !important;
+    background-color: #FF6B6B !important;
+    .container {
+        margin: 0em 12em 0em 12em !important; 
+    }
+    .item {
+        color: #fff;        
+    }
+    .item:hover{
+        color: #f1f1f1 !important;
+    }
 }
 
 .ui.form {
@@ -27,6 +139,6 @@ label{ color: $white !important;}
 }
 
 .grid.products {
-    padding-top: 8em;
+    margin-top: 8rem;
 }
 

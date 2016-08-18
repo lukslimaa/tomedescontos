@@ -1,29 +1,82 @@
 <div class="ui container page" ng-controller="PromoController as promoCtrl">
     <div class="ui column centered grid products">
-        <div class="left floated stackable eleven wide column">
-            <div class="ui divided items">
-                <div class="item promoItems" ng-repeat="promo in promoCtrl.promotions | filter:search">
-                    <div class="ui tiny image">
-                        <img ng-src="{{promo.img !== 'null' && promo.img || 'assets/img/rocket.svg'}}">
-                    </div>
-                    <div class="content">
-                        <a class="header" href="{{promo.url}}" target="_blank">{{promo.title}}</a>
-                        <div class="meta">
-                            <span class="cinema">
-                                <i class="clock icon"></i>
-                                <time am-time-ago="promo.date"></time>
-                            </span>
+        <!-- search bar - begin -->
+        <div class="left floated stackable twelve wide column searchBar">
+            <div class="ui fluid icon input">
+                <input class="tags" 
+                       type="text"
+                       id="findProduct"
+                       ng-model="promoCtrl.query" 
+                       placeholder="Qual produto você está procurando? Ex.: iPhone">
+                <i class="search icon"></i>
+            </div>
+
+            <div class="ui two column centered grid">
+                <div class="left floated stackable two wide column">
+                    <label class="suggestion">Sugestões:</label>
+                </div>
+                <div class="left floated stackable fourteen wide column">
+                    <button ng-repeat="item in promoCtrl.suggestedItems" 
+                            ng-class="promoCtrl.setTagColor(item.color)"
+                            ng-click="promoCtrl.searchSuggestedItem(item.name)">
+                            {{item.name}}
+                    </button>
+                </div>
+            </div>
+
+            <div class="ui checkbox alertMe">
+                <input id="alert" type="checkbox">
+                <label for="alert">Alerte-me! 
+                    <i class="circular mini help icon link alert" 
+                       data-variation="very wide">
+                    </i>
+                </label>
+            </div>
+        </div>
+        <!-- search bar - end -->
+
+        <!-- block where all promotions will be shown - begin -->
+        <div class="left floated stackable twelve wide column">
+            <div class="ui segment">
+                <div class="ui divided items">
+                    <div class="item promoItems" ng-repeat="promo in filteredPromos = (promoCtrl.promotions | filter:promoCtrl.query)">
+                        <div class="ui tiny image">
+                            <img ng-src="{{promo.img !== 'null' && promo.img || 'assets/img/pupHappy.png'}}">
                         </div>
-                        <div class="extra">
-                            <a class="ui right floated primary button" target="_blank" href="{{promo.url}}">
-                                Ver Detalhes
-                                <i class="right chevron icon"></i>
-                            </a>
-                            <!--<div class="ui label">Limited</div>-->
+                        <div class="content">
+                            <a class="header" href="{{promo.url}}" target="_blank">{{promo.title}}</a>
+                            <div class="meta">
+                                <span class="cinema">
+                                    <i class="clock icon"></i>
+                                    <time am-time-ago="promo.date"></time>
+                                </span>
+                            </div>
+                            <div class="extra">
+                                <a class="ui right floated small blue button" target="_blank" href="{{promo.url}}">
+                                    Ver Detalhes
+                                    <i class="right chevron icon"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- if a filtered product does not exist - begin -->
+                    <div class="item promoItems" ng-show="!filteredPromos.length">
+                        <div class="ui small image">
+                            <img ng-src="{{'assets/img/pupSad.png'}}">
+                        </div>
+                        <div class="content">
+                            <h2>AH NÃO!</h2> Infelizmente não temos nenhuma promoção para o que você buscou.
+                            Mas não se preocupa, nós ficaremos monitorando esse produto para você! Faz assim,
+                            deixa o nosso <strong>site aberto e ativa o alerta</strong> que nós enviaremos uma 
+                            notificação quando o seu produto aparecer! Obrigado! 
+                        </div>
+                    </div>
+                    <!-- if a filtered product does not exist - end -->
                 </div>
             </div>
         </div>
+        <!-- block where all promotions will be shown - end -->
     </div>
+
 </div>
