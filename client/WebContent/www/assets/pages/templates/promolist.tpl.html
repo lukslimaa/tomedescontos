@@ -24,13 +24,20 @@
                 </div>
             </div>
 
-            <div class="ui checkbox alertMe">
-                <input id="alert" type="checkbox">
-                <label for="alert">Alerte-me! 
-                    <i class="circular mini help icon link alert" 
-                       data-variation="very wide">
-                    </i>
-                </label>
+            <div class="ui two column centered grid">
+                <div class="left floated stackable column">
+                    <div class="ui checkbox alertMe">
+                        <input id="alert" type="checkbox">
+                        <label for="alert">Alerte-me! 
+                            <i class="circular mini help icon link alert" 
+                            data-variation="mini wide">
+                            </i>
+                        </label>
+                    </div>
+                </div>
+                <div class="right aligned stackable column searchingGif">
+                    <!-- gif animation included here through javascript code -->
+                </div>
             </div>
         </div>
         <!-- search bar - end -->
@@ -39,7 +46,9 @@
         <div class="left floated stackable twelve wide column">
             <div class="ui segment">
                 <div class="ui divided items">
-                    <div class="item promoItems" ng-repeat="promo in filteredPromos = (promoCtrl.promotions | filter:promoCtrl.query)">
+                    <div class="item promoItems" 
+                         ng-repeat="promo in filteredPromos = (promoCtrl.promotions | filter:promoCtrl.query)"
+                         ng-class="{highlight: promo.new === true}">
                         <div class="ui tiny image">
                             <img ng-src="{{promo.img !== 'null' && promo.img || 'assets/img/pupHappy.png'}}">
                         </div>

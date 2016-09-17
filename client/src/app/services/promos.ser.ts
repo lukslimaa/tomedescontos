@@ -18,6 +18,17 @@ module Tomedescontos {
             });
             return defer.promise;
         }
+
+        public getPromoImages(): ng.IPromise<any> {
+            var defer = this.$q.defer();
+            this.$http.get('http://localhost:8081/promoImages').then((response) => {
+                defer.resolve(response.data);
+            }, (errResponse) => {
+                defer.reject(errResponse);
+            });
+            return defer.promise;
+        }
+
     }
 }
 

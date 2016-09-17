@@ -44,9 +44,17 @@ module.exports = {
             });
         }
     },
+
     /* general method that returns the last 150 records sorted by date (descending) */
     find: (callback) => {
         Promo.find().sort({date: -1}).limit(150).exec(function(err, model){
+            return callback(model);
+        });
+    },
+
+    /* this implements a way to return 100 images of products from database */
+    findImages: (callback) => {
+        Promo.find({img: {$ne: null}}).select('img').limit(50).exec((err, model) => {
             return callback(model);
         });
     }

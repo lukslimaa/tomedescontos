@@ -1,0 +1,36 @@
+{
+  "name": "gridrotator",
+  "version": "0.1.0",
+  "homepage": "https://github.com/fembri/AnimatedResponsiveImageGrid",
+  "authors": [
+    "Nurhidayat Fembrianto <fembrii@gmail.com>"
+  ],
+  "description": "grid rotator",
+  "main": "js/jquery.gridrotator.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "jquery",
+    "grid",
+    "rotator"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.0",
+    "commit": "30ab9b531b12173d5ad88d449c3ee9acbb169de2"
+  },
+  "_source": "https://github.com/fembri/AnimatedResponsiveImageGrid.git",
+  "_target": "^0.1.0",
+  "_originalSource": "jquery-gridrotator",
+  "_direct": true
+}

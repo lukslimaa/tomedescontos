@@ -11,4 +11,11 @@ module.exports = function(app, db) {
             res.json(promos);
         });
     });
+
+    app.get('/promoImages', (req, res) => {
+        db.findImages((images)=>{
+            res.setHeader("Access-Control-Allow-Origin", "*");
+            res.json(images);
+        })
+    })
 }
