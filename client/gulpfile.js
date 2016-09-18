@@ -3,10 +3,28 @@ var ts = require('gulp-typescript');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var ngmin = require('gulp-ngmin');
 
 var tsProject = ts.createProject({
 	// todo
 });
+
+
+
+
+/*======================= Uglify =====================*/
+gulp.task('uglify', function(){
+	var tsResults = gulp.src('src/app/**/*.ts')
+		.pipe(sourcemaps.init())
+		.pipe(ts(tsProject));
+	
+	return tsResults.js.pipe(ngmin())
+				.pipe(uglify({mangle: false}))
+				.pipe(sourcemaps.write())
+				.pipe(concat('tomedescontos-min.js'))
+				.pipe(gulp.dest('WebContent/www'));
+})
+
 
 gulp.task('compress', function() {
   var tsResults = gulp.src('src/app/**/*.ts')
