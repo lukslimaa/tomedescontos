@@ -36,7 +36,7 @@ module Tomedescontos {
             ];  
 
             $('.alertMe').checkbox({
-                onChecked: => {
+                onChecked:() => {
                     this.turnNotificationOn();
                 }
             });
