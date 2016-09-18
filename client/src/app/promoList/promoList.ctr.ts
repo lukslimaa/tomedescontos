@@ -84,13 +84,16 @@ module Tomedescontos {
 
                 Notification.requestPermission(function(permission){
                     n = new Notification( "Alerta TomeDescontos!", {
-                        body: "Este alerta aparecerá quando uma nova promoção aparecer para o seu produto!", 
+                        body: "Opa! Fica ligado, pois este alerta aparecerá quando surgir uma nova promoção para o seu produto!", 
                         icon : "../../assets/img/tdLogoBackground.png"
                     });
                 });
 
                 /* setting true value to the signal variable */ 
                 this.alertIsOn = true;
+
+                /* make a noise! ;D  */
+                this.playSoundNotification();
             } 
             else if( chck === 'unknown' ){
                 alert("Oh! Seu browser não suporta essa funcionalidade! ;(") 

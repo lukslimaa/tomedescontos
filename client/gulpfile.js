@@ -13,7 +13,7 @@ gulp.task('compress', function() {
 	                    .pipe(sourcemaps.init())
 	                    .pipe(ts(tsProject));
   return tsResults.js.pipe(uglify()).pipe(sourcemaps.write())
-    .pipe(concat('portfolio.js')).pipe(gulp.dest('WebContent/www/app'));
+    .pipe(concat('tomedescontos.js')).pipe(gulp.dest('WebContent/www/app'));
 });
 
 gulp.task('scripts', function() {
