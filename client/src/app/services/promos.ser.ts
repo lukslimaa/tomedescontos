@@ -4,6 +4,8 @@ module Tomedescontos {
 
     export class PromoService {
 
+        private urlBase = window.location.hostname;
+
         constructor(private $http: ng.IHttpService,
             private $q: ng.IQService) {
 
@@ -11,7 +13,7 @@ module Tomedescontos {
 
         public pesquisar(): ng.IPromise<any> {
             var defer = this.$q.defer();
-            this.$http.get('http://localhost:8081/promos').then((response) => {
+            this.$http.get(this.urlBase + ':8081/promos').then((response) => {
                 defer.resolve(response.data);
             }, (errResponse) => {
                 defer.reject(errResponse);
@@ -21,7 +23,7 @@ module Tomedescontos {
 
         public getPromoImages(): ng.IPromise<any> {
             var defer = this.$q.defer();
-            this.$http.get('http://localhost:8081/promoImages').then((response) => {
+            this.$http.get(this.urlBase + ':8081/promoImages').then((response) => {
                 defer.resolve(response.data);
             }, (errResponse) => {
                 defer.reject(errResponse);

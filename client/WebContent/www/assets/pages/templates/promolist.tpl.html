@@ -12,10 +12,10 @@
             </div>
 
             <div class="ui two column centered stackable grid">
-                <div class="two wide right aligned column">
+                <div class="two wide left aligned column">
                     <label class="suggestion">Sugestões:</label>
                 </div>
-                <div class="fourteen wide left floated column">
+                <div class="fourteen wide left aligned column">
                     <button ng-repeat="item in promoCtrl.suggestedItems" 
                             ng-class="promoCtrl.setTagColor(item.color)"
                             ng-click="promoCtrl.searchSuggestedItem(item.name)">
