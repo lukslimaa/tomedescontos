@@ -54,7 +54,7 @@ section {
 .searchBar {
     min-height: 20vh;
     background-color: #F2F2F2;
-    .suggestion{color: #48484A !important; float:right; padding-top: 0.58rem;}
+    .suggestion{color: #48484A !important; margin:0 auto;}
     input[type=text]{
         background-color: transparent;
         margin: 0.9rem 0 0.9rem 0 !important;

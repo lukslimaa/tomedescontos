@@ -47,8 +47,7 @@ section, .initial, .second {
   /* IE 10+ */ }
   .searchBar .suggestion {
     color: #48484A !important;
-    float: right;
-    padding-top: 0.58rem; }
+    margin: 0 auto; }
   .searchBar input[type=text] {
     background-color: transparent;
     margin: 0.9rem 0 0.9rem 0 !important;

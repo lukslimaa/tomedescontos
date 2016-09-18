@@ -1,5 +1,5 @@
 <div class="ui container page" ng-controller="PromoController as promoCtrl">
-    <div class="ui column centered grid products">
+    <div class="ui column centered stackable grid products">
         <!-- search bar - begin -->
         <div class="left floated stackable twelve wide column searchBar">
             <div class="ui fluid icon input">
@@ -11,11 +11,11 @@
                 <i class="search icon"></i>
             </div>
 
-            <div class="ui two column centered grid">
-                <div class="left floated stackable two wide column">
+            <div class="ui two column centered stackable grid">
+                <div class="two wide right aligned column">
                     <label class="suggestion">Sugestões:</label>
                 </div>
-                <div class="left floated stackable fourteen wide column">
+                <div class="fourteen wide left floated column">
                     <button ng-repeat="item in promoCtrl.suggestedItems" 
                             ng-class="promoCtrl.setTagColor(item.color)"
                             ng-click="promoCtrl.searchSuggestedItem(item.name)">
