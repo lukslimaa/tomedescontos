@@ -4,22 +4,40 @@ html, body {
   text-align: center;
   margin: 0; }
 
+h1, h2, h3 {
+  font-family: 'Roboto Slab', palatino, serif; }
+
+p, a {
+  font-family: 'Roboto', arial, sans-serif; }
+
+/*----------------------- keyframes -----------------------*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    color: #888; }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    color: #333; } }
+/*----------------------- custom css -----------------------*/
+.ui.button {
+  font-family: 'Roboto', arial, sans-serif !important; }
+
 label, .ui.form .find label {
   color: #fff !important; }
 
-.headline-typography h1, .initial h1 {
-  color: #111;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 5.78rem;
-  font-weight: bold;
-  letter-spacing: -1px;
-  line-height: 0; }
-.headline-typography h2, .initial h2 {
-  color: #333;
-  max-width: 90%;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.87rem;
-  font-weight: 300; }
+.headline-typography, .initial {
+  text-align: center;
+  animation: fadeIn 4.6s forwards; }
+  .headline-typography h1, .initial h1 {
+    font-size: 5.78rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 0; }
+  .headline-typography h2, .initial h2 {
+    font-size: 1.87rem;
+    font-weight: 300; }
 
 .ui.small.image {
   width: 120px; }
@@ -101,7 +119,7 @@ section, .initial, .second {
   padding-bottom: 7%;
   color: white; }
   .initial .headline {
-    padding-top: 4%; }
+    margin: 6.89% auto auto 0; }
 
 .second {
   height: 80%;
@@ -110,26 +128,29 @@ section, .initial, .second {
   color: #d9cdf6; }
   .second .ui.green.button {
     border-radius: 0 !important; }
+  .second .ui.green.button:hover {
+    transform: scale(1.1); }
   .second p {
-    color: #666;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 14px;
+    color: #848484;
+    font-size: 1.2999em;
+    font-weight: 300;
     line-height: 24px;
     margin: 24px 0 24px;
     text-align: justify;
     text-justify: inter-word; }
   .second h3 {
-    color: #555;
-    font-family: 'Lato', sans-serif;
+    color: #444;
     font-weight: 300;
-    font-size: 50px;
-    line-height: 54px;
+    font-size: 3.56em;
+    line-height: 58px;
     text-align: left;
-    margin-top: 30px; }
+    margin: 0 0 25px; }
   .second .c_bottom {
     position: absolute !important;
     bottom: 0;
     left: 0; }
+  .second .imageTextGrid {
+    margin: 15% auto 0; }
 
 .features, .third .shareFeature, .third .alertFeature, .third .couponFeature, .third .commentsFeature {
   height: 400px; }
@@ -213,7 +234,14 @@ section, .initial, .second {
     margin-bottom: 100px; } }
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-  /* Styles */ }
+  /* Styles */
+  .initial .headline {
+    margin: 11.89% auto auto 0; }
+
+  .second .imageTextGrid {
+    margin: 0 auto 0; }
+  .second .ui.button {
+    margin-top: -23px !important; } }
 /* iPads (landscape) ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   /* Styles */ }

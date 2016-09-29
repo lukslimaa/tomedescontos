@@ -9,21 +9,38 @@ html, body {
     margin: 0;  
 }
 
+h1 , h2, h3 {
+    font-family: 'Roboto Slab', palatino, serif;
+}
+
+p, a {
+    font-family: 'Roboto', arial, sans-serif;
+}
+
+/*----------------------- keyframes -----------------------*/
+@keyframes fadeIn {
+    0% { opacity: 0; visibility: hidden; color: #888;}
+    100% {opacity: 1; visibility: visible; color: #333;}
+}
+
+
+/*----------------------- custom css -----------------------*/
+.ui.button {
+    font-family: 'Roboto', arial, sans-serif !important;
+}
+
 label{ color: $white !important;}
 
 .headline-typography {
+    text-align: center;
+    animation: fadeIn 4.6s forwards;
     h1{
-        color: #111; 
-        font-family: 'Helvetica Neue', sans-serif; 
         font-size: 5.78rem; 
-        font-weight: bold; 
+        font-weight: 700;
         letter-spacing: -1px; 
         line-height: 0;
     }
     h2 {
-        color: #333;
-        max-width: 90%;
-        font-family: 'Open Sans', sans-serif; 
         font-size: 1.87rem; 
         font-weight: 300; 
     }
@@ -119,9 +136,8 @@ section {
     padding-bottom: 7%;
     color: white;
     .headline {
-        padding-top: 4%;
+        margin: 6.89% auto auto 0;
     }
-   
 }
 
 .second {
@@ -130,11 +146,16 @@ section {
     padding-top: 7.5%;
     background-color: #fff;
     color: #d9cdf6;
-    .ui.green.button{ border-radius: 0 !important;}
+    .ui.green.button { 
+        border-radius: 0 !important;
+    }
+    .ui.green.button:hover { 
+        transform: scale(1.1);
+    }
     p {
-        color: #666; 
-        font-family: 'Helvetica Neue', sans-serif; 
-        font-size: 14px; 
+        color: #848484; 
+        font-size: 1.2999em; 
+        font-weight: 300;
         line-height: 24px; 
         margin: 24px 0 24px; 
         text-align: justify; 
@@ -142,18 +163,21 @@ section {
     }
     
     h3{
-        color: #555; 
-        font-family: 'Lato', sans-serif;
+        color: #444; 
         font-weight: 300; 
-        font-size: 50px;  
-        line-height: 54px; 
+        font-size: 3.56em;  
+        line-height: 58px; 
         text-align: left;
-        margin-top: 30px
+        margin: 0 0 25px;
     }
     .c_bottom{
         position: absolute !important;
         bottom:0;
         left:0;
+    }
+
+    .imageTextGrid {
+        margin: 15% auto 0;
     }
 }
 
@@ -274,6 +298,19 @@ and (max-width : 320px) {
 and (min-width : 768px)
 and (max-width : 1024px) {
     /* Styles */
+    .initial .headline {
+        margin: 11.89% auto auto 0;
+    }
+
+    .second {
+        .imageTextGrid {
+            margin: 0 auto 0;
+        }
+
+        .ui.button {
+            margin-top: -23px !important;
+        }
+    }
     
 }
  
