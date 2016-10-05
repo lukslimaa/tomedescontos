@@ -28,16 +28,17 @@ label, .ui.form .find label {
   color: #fff !important; }
 
 .headline-typography, .initial {
-  text-align: center;
-  animation: fadeIn 4.6s forwards; }
+  text-align: center; }
   .headline-typography h1, .initial h1 {
     font-size: 5.78rem;
     font-weight: 700;
     letter-spacing: -1px;
-    line-height: 0; }
+    line-height: 0;
+    animation: fadeIn 2.6s forwards; }
   .headline-typography h2, .initial h2 {
     font-size: 1.87rem;
-    font-weight: 300; }
+    font-weight: 300;
+    animation: fadeIn 4.6s forwards; }
 
 .ui.small.image {
   width: 120px; }
@@ -52,6 +53,7 @@ section, .initial, .second {
 
 .full-screen-background-image, .initial {
   background: linear-gradient(rgba(246, 246, 246, 0.5), rgba(246, 246, 246, 0.5)), url("../img/living-room.jpeg") no-repeat center center fixed;
+  background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

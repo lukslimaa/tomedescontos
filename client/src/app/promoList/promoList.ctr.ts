@@ -20,8 +20,17 @@ module Tomedescontos {
             private $interval: ng.IIntervalService,
             private $q: ng.IQService, 
             private $translate: ng.translate.ITranslateService,
-            private promoService: PromoService) {
+            private promoService: PromoService,
+            private notifyService: NotifyService) {
             
+            /* calling addToHomeScreen script */
+            addToHomescreen.removeSession();
+            addToHomescreen({
+                modal: true,
+                maxDisplayCount: 1,
+                skipFirstVisit: true
+            });
+
             this.alertMe = false;
             this.aux = [];
             /** defining default list of suggested items */
@@ -37,7 +46,16 @@ module Tomedescontos {
 
             $('.alertMe').checkbox({
                 onChecked:() => {
-                    this.turnNotificationOn();
+                    //this.turnNotificationOn();
+                    this.alertIsOn = true;
+                    this.notifyService.notifyNow(
+                            "TomeDescontos - Modo de Alerta Ativado!",
+                            "Você ativou o modo de alerta para o produto ["+this.query+"]. Iremos lhe notificar assim que encontrarmos uma promoção.",
+                            "http://tomdescontos.com"
+                    );
+                },
+                onUnchecked:()=> {
+                    this.alertIsOn = false;
                 }
             });
             
@@ -159,13 +177,19 @@ module Tomedescontos {
                      */
                     if((listOfNewPromotions[i].title).indexOf(this.query) !== -1){
                         
-                        if(Notification.permission !== 'granted'){
-                            Notification.requestPermission();
-                        }
-                        var n = new Notification( "Opaaa!", {
-                            body: "Encontramos uma promoção para: " + this.query + ". Corre lá e aproveita!", 
-                            icon : "../../assets/img/tdLogoBackground.png"
-                        });
+                        // if(Notification.permission !== 'granted'){
+                        //     Notification.requestPermission();
+                        // }
+                        // var n = new Notification( "Opaaa!", {
+                        //     body: "Encontramos uma promoção para: " + this.query + ". Corre lá e aproveita!", 
+                        //     icon : "../../assets/img/tdLogoBackground.png"
+                        // });
+
+                        this.notifyService.notifyNow(
+                            "TomeDescontos - Promoção Encontrada!",
+                            "Opa! Encontramos uma nova promoção para [" + this.query + "]! Corre lá e aproveita!",
+                            "http://tomdescontos.com"
+                        );
 
                         /* make a noise! ;D  */
                         this.playSoundNotification();
@@ -189,4 +213,4 @@ module Tomedescontos {
 
     }
 }
-app.controller('PromoController', ['$scope', '$http', '$timeout', '$interval', '$q', '$translate', 'PromoService', Tomedescontos.PromoController]);
+app.controller('PromoController', ['$scope', '$http', '$timeout', '$interval', '$q', '$translate', 'PromoService', 'NotifyService', Tomedescontos.PromoController]);
