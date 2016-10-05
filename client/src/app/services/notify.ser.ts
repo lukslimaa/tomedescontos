@@ -20,7 +20,7 @@ module Tomedescontos {
                 /* URL (defaults if unset) */
                 url,
                 /* Icon */
-                '../../assets/img/tdLogoBackground.png',
+                'http://tomedescontos.com/assets/img/tdLogoBackground.png',
                 {
                     /* Additional data hash */
                     notificationType: 'news-feature'
