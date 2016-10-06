@@ -49,9 +49,9 @@ module Tomedescontos {
                     //this.turnNotificationOn();
                     this.alertIsOn = true;
                     this.notifyService.notifyNow(
-                            "TomeDescontos - Modo de Alerta Ativado!",
+                            "TomeDescontos - Modo de Alerta Ativado com Sucesso",
                             "Você ativou o modo de alerta para o produto ["+this.query+"]. Iremos lhe notificar assim que encontrarmos uma promoção.",
-                            "http://tomdescontos.com"
+                            "http://tomedescontos.com"
                     );
                 },
                 onUnchecked:()=> {
@@ -188,9 +188,9 @@ module Tomedescontos {
                         this.notifyService.notifyNow(
                             "TomeDescontos - Promoção Encontrada!",
                             "Opa! Encontramos uma nova promoção para [" + this.query + "]! Corre lá e aproveita!",
-                            "http://tomdescontos.com"
+                            "http://tomedescontos.com"
                         );
-                        
+
                         break;    
                     }
                     
