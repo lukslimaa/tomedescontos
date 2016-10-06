@@ -28,7 +28,7 @@ module Tomedescontos {
             addToHomescreen({
                 modal: true,
                 maxDisplayCount: 1,
-                skipFirstVisit: true
+                onShow: this.notifyService.playSoundNotification()
             });
 
             this.alertMe = false;
@@ -190,27 +190,13 @@ module Tomedescontos {
                             "Opa! Encontramos uma nova promoção para [" + this.query + "]! Corre lá e aproveita!",
                             "http://tomdescontos.com"
                         );
-
-                        /* make a noise! ;D  */
-                        this.playSoundNotification();
+                        
                         break;    
                     }
                     
                 }
             }
         }
-
-        public playSoundNotification(): void {
-            var sound = document.createElement("audio");
-            sound.src = "../../assets/sounds/capisci.mp3";
-            sound.setAttribute("preload","auto");
-            sound.setAttribute("controls","none");
-            sound.style.display = "none";
-            document.body.appendChild(sound);
-
-           sound.play();
-        }
-
     }
 }
 app.controller('PromoController', ['$scope', '$http', '$timeout', '$interval', '$q', '$translate', 'PromoService', 'NotifyService', Tomedescontos.PromoController]);
