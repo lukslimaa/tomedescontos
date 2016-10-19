@@ -27,8 +27,7 @@ module Tomedescontos {
             addToHomescreen.removeSession();
             addToHomescreen({
                 modal: true,
-                maxDisplayCount: 1,
-                onShow: this.notifyService.playSoundNotification()
+                maxDisplayCount: 1
             });
 
             this.alertMe = false;
@@ -53,6 +52,9 @@ module Tomedescontos {
                             "Você ativou o modo de alerta para o produto ["+this.query+"]. Iremos lhe notificar assim que encontrarmos uma promoção.",
                             "http://tomedescontos.com"
                     );
+
+                    /* make a noise! */
+                    this.notifyService.playSoundNotification();
                 },
                 onUnchecked:()=> {
                     this.alertIsOn = false;
