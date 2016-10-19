@@ -23,7 +23,6 @@ module.exports = {
             var $ = cheerio.load(a);
             var img, title, url, currency, price, result = [];
             $('.promocao').filter(function(){
-                console.log($(this).find($('.informacoes h3[itemprop=name] a')).text());
                 img = $(this).find($('.imagem img')).attr('src');
                 title = $(this).find($('.informacoes h3[itemprop=name] a')).text();
                 url = $(this).find($('.informacoes a')).attr('href');
