@@ -26,6 +26,7 @@ module.exports = {
             $('.threads li .title').filter(function(){
                 result.push({title: $(this).text(), href: $(this)[0].attribs.href, img: null, date: utils.today()});
             });
+
             return callback(result);
         })
         .catch(function(err){
