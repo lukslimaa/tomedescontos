@@ -4,8 +4,8 @@ module Tomedescontos {
 
     export class PromoService {
 
-        private urlBase = window.location.origin;
-        //private urlBase = 'http://localhost';
+        //private urlBase = window.location.origin;
+        private urlBase = 'http://localhost';
 
         constructor(private $http: ng.IHttpService,
             private $q: ng.IQService) {

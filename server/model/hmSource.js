@@ -27,6 +27,8 @@ module.exports = {
                 result.push({title: $(this).text(), href: $(this)[0].attribs.href, img: null, date: utils.today()});
             });
 
+            console.log(result);
+
             return callback(result);
         })
         .catch(function(err){
