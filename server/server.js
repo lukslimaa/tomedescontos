@@ -17,7 +17,7 @@ mongoose.connect(generalParams.mongoAddr);
 setInterval(function(){
   console.log('processo iniciado!')
   c.ctrl(generalParams.urls);
-}, 60000);
+}, 30000);
 
 console.log('processo finalizado com sucesso!')
 

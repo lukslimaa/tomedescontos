@@ -45,11 +45,11 @@ module Tomedescontos {
 
             $('.alertMe').checkbox({
                 onChecked:() => {
-                    //this.turnNotificationOn();
                     this.alertIsOn = true;
                     this.notifyService.notifyNow(
                             "TomeDescontos - Modo de Alerta Ativado com Sucesso",
-                            "Você ativou o modo de alerta para o produto ["+this.query+"]. Iremos lhe notificar assim que encontrarmos uma promoção.",
+                            "Você ativou o modo de alerta para o produto ["+this.query+"]." + 
+                            "Iremos lhe notificar assim que encontrarmos uma promoção.",
                             "http://tomedescontos.com"
                     );
 
@@ -178,15 +178,7 @@ module Tomedescontos {
                      * is looking for and then to show a notification to him 
                      */
                     if((listOfNewPromotions[i].title).indexOf(this.query) !== -1){
-                        
-                        // if(Notification.permission !== 'granted'){
-                        //     Notification.requestPermission();
-                        // }
-                        // var n = new Notification( "Opaaa!", {
-                        //     body: "Encontramos uma promoção para: " + this.query + ". Corre lá e aproveita!", 
-                        //     icon : "../../assets/img/tdLogoBackground.png"
-                        // });
-
+                    
                         this.notifyService.notifyNow(
                             "TomeDescontos - Promoção Encontrada!",
                             "Opa! Encontramos uma nova promoção para [" + this.query + "]! Corre lá e aproveita!",
