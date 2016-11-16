@@ -2,6 +2,7 @@
 
 module Tomedescontos {
 	app.config(function($stateProvider, $urlRouterProvider){
+       // $locationProvider.html5Mode({ enabled: true, requireBase: false });
         $urlRouterProvider.otherwise('/promocoes');
         
         $stateProvider
@@ -9,9 +10,14 @@ module Tomedescontos {
             //     url: "/home",
             //     templateUrl: "assets/pages/templates/main.tpl.html"
             // })
-            .state('promo', {
+            .state('promocoes', {
                 url: "/promocoes",
                 templateUrl: "assets/pages/templates/promolist.tpl.html"
             })
-    })
+            .state('detail', {
+                url: "/promocao/:title",
+                templateUrl: "assets/pages/templates/promoDetail.tpl.html"
+            });
+    });
+    
 }

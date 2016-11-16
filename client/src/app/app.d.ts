@@ -6,6 +6,7 @@
 /// <reference path="promoList/promoList.ctr.ts" />
 /// <reference path="menu/menu.ctr.ts" />
 /// <reference path="main/main.ctr.ts" />
+/// <reference path="promoDetail/promoDetail.ctr.ts" />
 
 /// <reference path="services/promos.ser.ts" />
 /// <reference path="services/notify.ser.ts" />

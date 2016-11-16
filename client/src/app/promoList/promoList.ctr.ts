@@ -167,7 +167,7 @@ module Tomedescontos {
        *| a new promotion appears for the product which he is looking for.                      |*
        *|---------------------------------------------------------------------------------------|*/
         public showNotification(listOfNewPromotions:any[]):void {
-            console.log('produto buscado: ' + this.query + ' num. novas prom.: ' + listOfNewPromotions.length + ' alerta status: ' + this.alertIsOn)
+
             /* checking whether user had set a product to search on filter, whether there's
              * at least one new promo and then whether user had set the alert mode on. 
              */
@@ -190,6 +190,10 @@ module Tomedescontos {
                     
                 }
             }
+        }
+
+        public transferPromoData(promo: any): void {
+            this.promoService.setPromoSelected(promo);
         }
     }
 }

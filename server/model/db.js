@@ -57,6 +57,22 @@ module.exports = {
         Promo.find({img: {$ne: null}}).select('img').limit(50).exec((err, model) => {
             return callback(model);
         });
+    },
+
+    findPromoByTitle: (title, callback) => {
+        Promo.findOne({'title':title}, function(err, model){
+            return callback(model);
+        })
+    },
+
+    updatePromo: (newData, callback) => {
+        Promo.update( {'_id':newData._id}, {$set: newData},
+                      
+                      function(err, result) {
+                          console.log(result);
+                          return callback(result);
+                      }
+        );
     }
 };
 

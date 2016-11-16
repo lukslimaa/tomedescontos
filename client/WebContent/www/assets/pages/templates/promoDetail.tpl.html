@@ -1,0 +1,130 @@
+<br><br>
+<div class="ui container page" ng-controller="PromoDetailController as detailCtrl">
+    <div class="ui two column stackable grid">
+
+
+        <!-- First column - Begin -->
+        <div class="four wide column">
+
+            <div class="ui two column stackable row">
+
+                <div class="center aligned column">
+                    <img class="ui medium image" ng-src="{{detailCtrl.promo.img !== 'null' && detailCtrl.promo.img || 'assets/img/pupHappy.png'}}">
+                </div><br>
+                <div class="center aligned column">
+                    <div class="ui attached segment thePrice">
+                        <p>Preço: <strong>{{detailCtrl.promo.price}}</strong></p>
+                    </div>
+                    <div class="ui divider"></div>
+                    <a class="fluid ui green button" target="_blank" href="{{detailCtrl.promo.url}}">Ver Promoção</a>
+                    <a class="fluid ui facebook button" target="_blank" href="http://www.facebook.com/share.php?u={{detailCtrl.promo.shareUrl}}&title={{detailCtrl.promo.title}}"><i class="facebook icon"></i>Envie para um amigo!</a>
+                </div>
+            </div>
+        </div>
+        <!-- First column - End -->
+
+        <!-- Second Column - Begin -->
+        <div class="twelve wide left aligned stackable column">
+
+            <div class="ui two column stackable row">
+
+                <!-- Title and Price Tag - Begin -->
+                <div class="left aligned column">
+                    <div class="ui large header" ng-model="detailCtrl.promo.title"> {{detailCtrl.promo.title}} </div>
+                </div><br>
+                <!-- Title and Price Tag - End -->
+
+                <!-- Statistics Panel - Begin -->
+                <div class="ui two column row">
+                    <div class="ui padded segment">
+                        <div class="center aligned column">
+                            <h3 class="ui grey header">
+                                <i class="line chart icon"></i>
+                                <div class="content">
+                                    Histórico de preço: Últimos 90 Dias 
+                                </div>
+                            </h3> <br>
+                        
+                            <div class="ui mini statistics">
+
+
+                                <!-- ------- CURRENT PRICE STATISTIC - BEGIN ------- -->
+                                <div class="statistic">
+
+                                    <div class="value">
+                                        <i class="circle green icon">
+                                        </i> 
+                                        {{detailCtrl.promo.price}}
+                                    </div>
+
+                                    <div class="label">
+                                        Preço Agora
+                                    </div>
+                                </div>
+                                <!-- ------ CURRENT PRICE STATISTIC - END ------- -->
+
+
+                                
+                                <!-- ------- MINIMUM PRICE STATISTIC - BEGIN ------- -->
+                                <div class="statistic">
+
+                                    <!-- conditional for minPrice - begin -->
+                                    <div class="value" ng-if="detailCtrl.promo.minPrice">
+                                        <i class="arrow down green icon"></i> {{detailCtrl.promo.minPrice}}
+                                    </div>
+                                    <div class="value noPrice" ng-if="detailCtrl.promo.minPrice == null">
+                                        <i class="warning sign red icon"></i> Indisponível
+                                    </div>
+                                    <!-- conditional for minPrice - end -->
+
+                                    <div class="label">
+                                        Menor Preço
+                                    </div>
+                                </div>
+                                <!-- ------ MINIMUM PRICE STATISTIC - END ------- -->
+
+                                <!-- ------- MAXIMUM PRICE STATISTIC - BEGIN ------- -->
+                                <div class="statistic">
+
+                                    <!-- conditional for maxPrice - begin -->
+                                    <div class="value" ng-if="detailCtrl.promo.maxPrice">
+                                        <i class="arrow up red icon"></i> {{detailCtrl.promo.maxPrice}}
+                                    </div>
+                                    <div class="value noPrice" ng-if="detailCtrl.promo.maxPrice == null">
+                                        <i class="warning sign red icon"></i> Indisponível
+                                    </div>
+                                    <!-- conditional for maxPrice - end -->
+
+                                    <div class="label">
+                                        Maior Preço
+                                    </div>
+                                </div>
+                                <!-- ------- MAXIMUM PRICE STATISTIC - END ------- -->
+
+                            </div>
+                        </div>
+                        <div class="right aligned column">
+                            <small>Dados fornecidos pelo <a target="_blank" href="http://www.buscape.com.br/">Buscapé</a></small>
+                        </div>
+                    </div>
+                </div>
+                <!-- Statistics Panel - End -->
+                <div class="center aligned column comments">
+                    <h3 class="ui grey header">
+                        <i class="comments outline icon"></i>
+                        <div class="content">
+                            Comentários
+                        </div>
+                    </h3>
+                    <div class="ui segment">
+                        <div class="fb-comments" data-href="http://tomedescontos.com/promocao/{{detailCtrl.promo.title}}" data-numposts="5"></div>
+                    </div>
+                </div>
+
+
+            </div>
+            
+        </div>
+        <!-- Second Column - Begin -->
+    </div>
+</div>

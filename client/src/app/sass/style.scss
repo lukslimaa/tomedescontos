@@ -56,6 +56,23 @@ label{ color: $white !important;}
     margin-top: 5em;
 }
 
+.comments {
+    margin-top: 50px;
+}
+
+.noPrice {
+    font-size: 12px !important;
+    color: grey !important;
+}
+
+.ui.fluid.button {
+    margin-top: 3px;
+}
+
+.thePrice p {
+    font-size: 2em;
+}
+
 section {
     height: 100%;
     margin:0 auto;

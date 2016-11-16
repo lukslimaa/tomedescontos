@@ -1,5 +1,6 @@
 /** defining all constant variables */
 const express = require('express'),
+      bodyParser = require('body-parser'),
       app = express(),
       mongoose = require('mongoose'),
       request = require('request-promise'),
@@ -8,16 +9,22 @@ const express = require('express'),
       fs = require('fs'),
       c = require('./controller/app.js'),
       db = require('./model/db.js'),
-      generalParams = require('./config/generalParams.js');
+      generalParams = require('./config/generalParams.js'),
+      cors = require('cors');
 
-require('./app/routes.js')(app, db);
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+app.use(cors({origin: 'http://localhost:8887'}));
 mongoose.connect(generalParams.mongoAddr);
+require('./app/routes.js')(app, db);
 
 /** calling service to update database with new promotions */
-setInterval(function(){
-  console.log('processo iniciado!')
-  c.ctrl(generalParams.urls);
-}, 30000);
+// setInterval(function(){
+//   console.log('processo iniciado!')
+//   c.ctrl(generalParams.urls);
+// }, 120000);
 
 console.log('processo finalizado com sucesso!')
 
