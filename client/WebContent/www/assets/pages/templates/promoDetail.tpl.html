@@ -16,8 +16,20 @@
                         <p>Preço: <strong>{{detailCtrl.promo.price}}</strong></p>
                     </div>
                     <div class="ui divider"></div>
-                    <a class="fluid ui green button" target="_blank" href="{{detailCtrl.promo.url}}">Ver Promoção</a>
-                    <a class="fluid ui facebook button" target="_blank" href="http://www.facebook.com/share.php?u={{detailCtrl.promo.shareUrl}}&title={{detailCtrl.promo.title}}"><i class="facebook icon"></i>Envie para um amigo!</a>
+                    
+                    <a class="fluid ui orange button" target="_blank" href="{{detailCtrl.promo.url}}">
+                        <i class="external icon"></i> Ver Promoção
+                    </a> <br>
+                    <a class="fluid ui green  button" target="_blank" href="whatsapp://send?text=Ei, olha esse site http://tomedescontos.com Tem muita promoção massa! Se liga aí!">
+                        <i class="whatsapp icon"></i> Compartilhe no Whatsapp
+                    </a> <br>
+                    
+                    <div class="fb-share-button" data-href="http://tomedescontos.com/#/promocao/{{detailCtrl.promo.title}}" data-layout="button_count" data-mobile-iframe="true">
+                        <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftomedescontos.com%2F%23%2Fpromocao%2F{{detailCtrl.promo.title}};src=sdkpreparse">
+                            Compartilhar
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -39,11 +51,11 @@
                     <div class="ui padded segment">
                         <div class="center aligned column">
                             <h3 class="ui grey header">
-                                <i class="line chart icon"></i>
+                                <i class="line chart icon" data-variation="inverted"></i>
                                 <div class="content">
-                                    Histórico de preço: Últimos 90 Dias 
+                                    Histórico de preço: Últimos 90 Dias
                                 </div>
-                            </h3> <br>
+                            </h3><br>
                         
                             <div class="ui mini statistics">
 
@@ -70,7 +82,7 @@
 
                                     <!-- conditional for minPrice - begin -->
                                     <div class="value" ng-if="detailCtrl.promo.minPrice">
-                                        <i class="arrow down green icon"></i> {{detailCtrl.promo.minPrice}}
+                                        <i class="arrow down blue icon"></i> {{detailCtrl.promo.minPrice}}
                                     </div>
                                     <div class="value noPrice" ng-if="detailCtrl.promo.minPrice == null">
                                         <i class="warning sign red icon"></i> Indisponível

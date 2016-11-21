@@ -113,6 +113,20 @@ section, .initial, .second {
     .searchBar .checkbox input {
       outline: 1px solid !important; }
 
+/* Statistics - Begin */
+.ui.statistics {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .ui.statistics .statistic {
+    width: 25%;
+    height: 120px;
+    justify-content: center;
+    background-color: #f2f2f2;
+    border-radius: 0 20px 20px;
+    border: 1px solid #88AABF; }
+
+/* Statistics - End */
 /* highlight new products */
 @-webkit-keyframes yellow-fade {
   0% {
@@ -238,7 +252,7 @@ section, .initial, .second {
   .second {
     margin-bottom: 100px; } }
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 420px) {
   /* Styles */
   .headline-typography h1, .initial h1 {
     font-size: 2.94em; }
@@ -246,7 +260,10 @@ section, .initial, .second {
     font-size: 1.62em; }
 
   .second {
-    margin-bottom: 100px; } }
+    margin-bottom: 100px; }
+
+  .ui.statistics .statistic {
+    width: 50%; } }
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   /* Styles */
@@ -256,7 +273,10 @@ section, .initial, .second {
   .second .imageTextGrid {
     margin: 0 auto 0; }
   .second .ui.button {
-    margin-top: -23px !important; } }
+    margin-top: -23px !important; }
+
+  .statistic {
+    width: 33%; } }
 /* iPads (landscape) ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   /* Styles */ }
@@ -268,6 +288,8 @@ section, .initial, .second {
   /* Styles */ }
 /* iPhone 4 ----------- */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  /* Styles */ }
+  /* Styles */
+  .statistic {
+    width: 33%; } }
 
 /*# sourceMappingURL=style.css.map */

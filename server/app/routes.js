@@ -31,7 +31,7 @@ module.exports = function(app, db) {
 
     /* Endpoint which returns all details about a product. Data comes from my own database. */
     app.get('/promo/getPromoByTitle/:title', (req, res) => {
-        console.log(req.params.title);
+        //console.log(req.params.title);
         db.findPromoByTitle(req.params.title, (result) => {
             res.json(result);
         });

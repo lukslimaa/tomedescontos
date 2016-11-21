@@ -62,11 +62,12 @@ module.exports = {
     findPromoByTitle: (title, callback) => {
         Promo.findOne({'title':title}, function(err, model){
             return callback(model);
-        })
+        });
     },
 
     updatePromo: (newData, callback) => {
-        Promo.update( {'_id':newData._id}, {$set: newData},
+        console.log(newData);
+        Promo.update( {'_id':newData.id}, {$set: newData},
                       
                       function(err, result) {
                           console.log(result);

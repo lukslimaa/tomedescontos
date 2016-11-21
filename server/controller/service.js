@@ -4,8 +4,6 @@ module.exports = {
 
     /* This function returns all data about a given product. (Search by the product title) */
     getProductDetail: (title, callback) => {
-        
-        console.log('recebido: ' + title);
 
         const options = {
             uri: 'http://sandbox.buscape.com/service/findProductList/3250684742747036454c303d',
@@ -26,8 +24,6 @@ module.exports = {
             jsonData["maxPrice"] = result.product[0].product.pricemax;
             jsonData["productName"] = result.product[0].product.productname;
             jsonData["image"] = result.product[0].product.thumbnail.formats[1].formats.url;
-
-            console.log(jsonData);
 
             return callback(jsonData);
         }).catch((err) => {

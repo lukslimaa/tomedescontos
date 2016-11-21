@@ -58,9 +58,15 @@ module Tomedescontos {
             return defer.promise;
         }
 
-        public updatePromoData(newData: any): ng.IPromise<any> {
+
+        /* This method is responsible to update some data about an specific promo such as the promo image, minPrice, etc. */
+        public updatePromoData(promo: any): ng.IPromise<any> {
+
             var defer = this.$q.defer();
-            this.$http.post(this.urlBase + ':8081/promo/update', newData).then((response) => {
+            
+            this.$http.post(this.urlBase + ':8081/promo/update', $.param(promo), {
+                headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+            }).then((response) => {
                 defer.resolve(response.data);
             }, (errResponse) => {
                 defer.reject(errResponse);

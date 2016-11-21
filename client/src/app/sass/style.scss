@@ -80,7 +80,8 @@ section {
 }
 
 .full-screen-background-image {
-    background: linear-gradient(rgba(246, 246, 246, 0.5), rgba(246, 246, 246, 0.5)),url('../img/living-room.jpeg') no-repeat center center fixed; 
+    background: linear-gradient(rgba(246, 246, 246, 0.5),  
+                                rgba(246, 246, 246, 0.5)),url('../img/living-room.jpeg') no-repeat center center fixed; 
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -131,6 +132,26 @@ section {
     }
 
 }
+
+/* Statistics - Begin */
+
+    .ui.statistics {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .statistic {
+            width: 25%;
+            height: 120px;
+            justify-content: center;
+            background-color: #f2f2f2;
+            border-radius: 0 20px 20px;
+            border: 1px solid #88AABF;
+        }
+
+    }
+
+/* Statistics - End */
 
 /* highlight new products */
 @-webkit-keyframes yellow-fade {
@@ -302,7 +323,7 @@ and (max-width : 480px) {
  
 /* Smartphones (portrait) ----------- */
 @media only screen
-and (max-width : 320px) {
+and (max-width : 420px) {
     /* Styles */
     .headline-typography {
         h1 {font-size: 2.94em;}
@@ -310,6 +331,12 @@ and (max-width : 320px) {
     }
     .second {
         margin-bottom: 100px;
+    }
+
+    .ui.statistics {
+        .statistic {
+            width: 50%;
+        }
     }
 }
  
@@ -330,6 +357,10 @@ and (max-width : 1024px) {
         .ui.button {
             margin-top: -23px !important;
         }
+    }
+
+    .statistic {
+        width: 33%;
     }
     
 }
@@ -361,6 +392,9 @@ and (min-width : 1224px) {
 only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5) {
     /* Styles */
+    .statistic {
+        width: 33%;
+    }
 }
 
 

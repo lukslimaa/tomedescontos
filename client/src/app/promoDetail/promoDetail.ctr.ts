@@ -5,8 +5,9 @@ module Tomedescontos {
     export class PromoDetailController {
 
         /* Private variables come here. */
-        private promo: any[]= [];
+        private promo: any[] = [];
         private title: String = "";
+        private wtsappLink: String = "";
         
         constructor(private $scope: ng.IScope, 
             private $http: ng.IHttpService,
@@ -15,31 +16,58 @@ module Tomedescontos {
             private $translate: ng.translate.ITranslateService,
             private promoService: PromoService) {   
 
+                var promoJson = {};
+                var lineCharIcon = $('.line.chart.icon');
+                var statistics = $('.ui.statistics .statistic');
+                /* Triggering line chart icon popup to explain to the user where we found the price history and how it could help him/her. */
+                lineCharIcon.popup({
+                    title: 'Não tem certeza se será um bom negócio?',
+                    content: 'Compare o preço atual do produto com o histórico de preços fornecidos pelo Buscapé.' +
+                             ' Confere aqui embaixo!',
+                    inline: true
+                });
+                lineCharIcon.popup('show');
+
+                statistics.transition({
+                    animation : 'scale in',
+                    duration  : 1000,
+                    interval  : 200
+                });
+
+
                 /* Saving promo title in a short variable. Im' lazy! ;D */            
                 this.title = this.$stateParams.title;
                 this.promo["shareUrl"] = window.location.href;
 
                 /* (1) retrieving promo data from our database. */
                 this.promoService.findPromoByTitle(this.title).then((data)=>{
+                    
                     this.promo["url"] = data.url;
                     this.promo["img"] = data.img;
+                    this.promo["id"] = data._id;
+
                 })
 
                 this.splittingPriceFromTitle(this.title);
-                this.promoService.getPromoDetail(this.improvingTheTitle(this.title)).then((data)=>{
-                    
+                this.promoService.getPromoDetail(this.improvingTheTitle(this.title)).then((data) => {
+                    this.promo["maxPrice"] = data.maxPrice;
+                    this.promo["minPrice"] = data.minPrice;
+
                     /* If promo does not have an image set and we found one through buscape api, then
                        set it to image atribute and update it in the database. */
                     if(!this.promo["img"] && data.image) {
                         this.promo["img"] = data.image;
 
+                        var test = {
+                            'id': this.promo["id"],
+                            'img': this.promo["img"]
+                        }
+
+                        
                         /* I'm updating just the promo image at this moment, but I'll update all new data
                         regarding the promo later. */
-                        this.promoService.updatePromoData(this.promo);
+                        this.promoService.updatePromoData(test);
                     }
-
-                    this.promo["maxPrice"] = data.maxPrice;
-                    this.promo["minPrice"] = data.minPrice;
                 });
         }
 

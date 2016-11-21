@@ -13,8 +13,12 @@ const express = require('express'),
       cors = require('cors');
 
 
-app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
+
 
 app.use(cors({origin: 'http://localhost:8887'}));
 mongoose.connect(generalParams.mongoAddr);
