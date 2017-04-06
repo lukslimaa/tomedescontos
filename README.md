@@ -45,6 +45,7 @@ If you wanna have fun improving this project and make a huge community of grassh
 
 ## Acknowledgments
 
-* I would like to thank Buscape for providing me an outstanding API which gave me an opportunity to show the min and max prices, and
-a bunch of other informations really relevant to help us, users, to pick the right promo and make a big deal.
+* I would like to thank [Buscape](https://developer.buscape.com.br/) for providing me an outstanding API which gave me an opportunity to show the min and max prices, and a bunch of other informations really relevant to help us, users, to pick the right promo and make a big deal.
+
+* Thanks [OneSignal](https://onesignal.com/) as well for providing us a great push notification cross platform delivery. So, whether you are looking for an efficient way to reach your users through push notifications, please, consider this service.
 
