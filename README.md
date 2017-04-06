@@ -36,7 +36,7 @@ BACK-END PROJECT
 
 ## Contributing
 
-If you wanna help me improve this project for fun, add me here on github! 
+If you wanna have fun improving this project and make a huge community of grasshoppers happy, add me here on github! 
 
 ## Authors
 
@@ -45,6 +45,6 @@ If you wanna help me improve this project for fun, add me here on github!
 
 ## Acknowledgments
 
-* I would like to thank Buscape for providing me an outstanding API which give me an opportunity to show the min and max prices, and
-a bunch of other informations really relevant to help us, users, to pick the right promo.
+* I would like to thank Buscape for providing me an outstanding API which gave me an opportunity to show the min and max prices, and
+a bunch of other informations really relevant to help us, users, to pick the right promo and make a big deal.
 
